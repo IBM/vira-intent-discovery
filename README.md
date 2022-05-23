@@ -77,4 +77,5 @@ If you have any questions or issues you can create a new [issue here][issues].
 ## Reference
 TBD
 
-[issues]: https://github.com/IBM/sib/issues/new
+[issues]: https://github.com/IBM/vira-intent-discovery/issues/new
+
