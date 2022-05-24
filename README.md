@@ -1,8 +1,10 @@
 # VIRA Intent Discovery
 
+## DRAFT VERSION - STAY TUNED FOR UPDATES
+
 ## Scope
 
-The purpose of this project is to provide an evaluation framework for intent discovery over chats conducted with the [VIRA chatbot](https://vaxchat.org) . This repository becomes available along side the releases of the paper [Intent Discovery Benchmark for a Chatbot Addressing COVID-19 Vaccine Hesitancy](#reference).
+The purpose of this project is to provide an evaluation framework for intent discovery over chats conducted with the [VIRA chatbot](https://vaxchat.org) . This repository becomes available along side the releases of the paper [Benchmark Data and Evaluation Framework for Intent Discovery Around COVID-19 Vaccine Hesitancy](#reference).
 
 VIRA's chat dataset (`VIRADATA`) is available to download from [Johns Hopkins Bloomberg School of Public Health](https://vaxchat.org/research). This code base is compatible with the dataset snapshot as of May 2022.
 
