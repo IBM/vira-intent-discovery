@@ -6,17 +6,17 @@
 
 The purpose of this project is to provide an evaluation framework for intent discovery over chats conducted with the [VIRA chatbot](https://vaxchat.org) . This repository becomes available along side the releases of the paper [Benchmark Data and Evaluation Framework for Intent Discovery Around COVID-19 Vaccine Hesitancy](#reference).
 
-VIRA's chat dataset (`VIRADATA`) is available to download from [Johns Hopkins Bloomberg School of Public Health](https://vaxchat.org/research). This code base is compatible with the dataset snapshot as of May 2022.
+VIRA's chat dataset (`VIRADialogs`) is available to download from [Johns Hopkins Bloomberg School of Public Health](https://vaxchat.org/research). This code base is compatible with the dataset snapshot as of May 2022.
 
 Users are welcome to use this framework for evaluating intent discovery over user utterances from the dataset. 
 
 
 ## Usage
 
-To evaluate a new algorithm over `VIRADATA` and compare it to the ones reported in the paper:
+To evaluate a new algorithm over `VIRADialogs` and compare it to the ones reported in the paper:
 
 1. Clone this repository
-2. Download `VIRADATA` and put the csv file under `resources/snapshot`
+2. Download `VIRADialogs` and put the csv file under `resources/snapshot`
 3. Activate a python (3.7+) environment
 4. Install the dependencies listed in requirements.txt
 ```
