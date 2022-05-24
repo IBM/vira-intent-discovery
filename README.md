@@ -77,7 +77,8 @@ If you have any questions or issues you can create a new [issue here][issues].
 
 
 ## Reference
-TBD
+Benchmark Data and Evaluation Framework for Intent Discovery Around COVID-19 Vaccine Hesitancy - arXiv
+Link will be added soon
 
 [issues]: https://github.com/IBM/vira-intent-discovery/issues/new
 
