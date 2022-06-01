@@ -1,0 +1,11 @@
+scikit-learn
+scipy
+numpy
+pandas
+sib-clustering
+sentence_transformers
+nltk
+streamlit
+requests
+transformers
+datasets

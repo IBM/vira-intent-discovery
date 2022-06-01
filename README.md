@@ -1,14 +1,12 @@
 # VIRA Intent Discovery
 
-## DRAFT VERSION - CURRENTLY BROKEN - STAY TUNED FOR UPDATES
-
 ## Scope
 
 The purpose of this project is to provide an evaluation framework for intent discovery over chats conducted with the [VIRA chatbot](https://vaxchat.org) . This repository becomes available along side the releases of the paper [Benchmark Data and Evaluation Framework for Intent Discovery Around COVID-19 Vaccine Hesitancy](#reference).
 
 VIRA's chat dataset (`VIRADialogs`) is available to download from [Johns Hopkins Bloomberg School of Public Health](https://vaxchat.org/research). This code base is compatible with the dataset snapshot as of May 2022.
 
-Users are welcome to use this framework for evaluating intent discovery over user utterances from the dataset. 
+Users are welcome to use the dataset and framework for evaluating new algorithms for intent discovery. 
 
 
 ## Usage
@@ -48,7 +46,11 @@ streamlit run ui.py
 
 
 ## Intent Matching
-The framework relies on a transformers-based classifier for classifying user utterances from the dataset to (at most) one COVID-19 vaccine intent, and for matching intents discovered by an algorithm to the target intents. This model is based on RoBERTa large ([Liu, 2019](https://arxiv.org/abs/1907.11692)), fine-tuned on a dataset of intent expressions available [here](https://research.ibm.com/haifa/dept/vst/debating_data.shtml). The model is available on 🤗 Transformer models hub and downloaded automatically as part of the evaluation process. Users can experiment with alternative models by modifying the reference in the file `model.py`.  
+The framework relies on a transformers-based classifier for classifying user utterances from the dataset to (at most) one COVID-19 vaccine intent, and for matching intents discovered by an algorithm to the target intents. 
+
+This model is based on RoBERTa large ([Liu, 2019](https://arxiv.org/abs/1907.11692)), fine-tuned on a dataset of intent expressions available [here](https://research.ibm.com/haifa/dept/vst/debating_data.shtml) and also on 🤗 Transformer datasets hub [here](https://huggingface.co/datasets/ibm/vira-intents). The model is available on 🤗 Transformer models hub [here](). The dataset and model are downloaded automatically as part of the training and evaluation processes. 
+
+Users can experiment with alternative models by modifying the reference in the file `model.py` or by training in a different framework.  
 
 ## License
 
@@ -77,8 +79,7 @@ If you have any questions or issues you can create a new [issue here][issues].
 
 
 ## Reference
-Benchmark Data and Evaluation Framework for Intent Discovery Around COVID-19 Vaccine Hesitancy - arXiv
-Link will be added soon
+Benchmark Data and Evaluation Framework for Intent Discovery Around COVID-19 Vaccine Hesitancy. Shai Gretz, Assaf Toledo, Roni Friedman, Dan Lahav, Rose Weeks, Naor Bar-Zeev, João Sedoc, Pooja Sangha, Yoav Katz, Noam Slonim. arXiv, 2022
 
 [issues]: https://github.com/IBM/vira-intent-discovery/issues/new
 
