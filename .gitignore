@@ -2,5 +2,6 @@
 /resources/snapshot/vira_logs_2022_05_test.csv
 /resources/snapshot/vira_logs_2022_05_train.csv
 /resources/vectors/
+/intent_model/
 /.idea/
 /venv/
