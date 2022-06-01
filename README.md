@@ -62,7 +62,7 @@ Evaluating a new algorithm is fairly straightforward:
       1.  The enum of the new algorithm
       1.  A function for generating the algorithm result. The function should have the signature `(algorithm: Algorithm, df: pd.DataFrame, output_dir: str) -> None` (See `cluster_and_extract_intents` in `clustering.py` for example). Alternatively, you can put `generated_externally` if the generation is done by a separate - offline - process.
       1.  The value `Runstatus.Run` to include the algorithm in the next run of the evaluation.
-   * Whether a function was specified, or the generation is done externally, the results should be stored in a file named `predictions.csv` under the output path given to the new algorithm. The CSV consists of 3 columns: `slot` , `intent` and `id`. These are the name of a slot, a predicted intent in that slot, and the id of the text associated to this intent in that slot. For example, see the file under `resources/predictions/kmeans`. 
+   * Whether a function was specified, or the generation is done externally, the results should be stored in a file named `predictions.csv` under the output path given to the new algorithm. The CSV consists of 3 columns: `slot` , `intent` and `id`. The `slot` is a time-frame marker. We use a date format to indicate it, so for example 2021-07-01 is used to indicate the whole month of July 2021. The `intent` is a predicted intent in that `slot`, and the `id` of the text associated to this `intent` in that `slot`. For example, see the file under `resources/predictions/kmeans`. 
 
 3. Run the baselines generation file
 ```
@@ -77,9 +77,9 @@ streamlit run ui.py
 ## Intent Matching
 The framework relies on a transformers-based classifier for classifying user utterances from the dataset to (at most) one COVID-19 vaccine intent, and for matching intents discovered by an algorithm to the target intents. 
 
-This model is based on RoBERTa large ([Liu, 2019](https://arxiv.org/abs/1907.11692)), fine-tuned on a dataset of intent expressions available [here](https://research.ibm.com/haifa/dept/vst/debating_data.shtml) and also on 🤗 Transformer datasets hub [here](https://huggingface.co/datasets/ibm/vira-intents). The model is available on 🤗 Transformer models hub [here](https://huggingface.co/ibm/roberta-large-vira-intents). The dataset and model are downloaded automatically as part of the training and evaluation processes. 
+This model is based on RoBERTa large ([Liu, 2019](https://arxiv.org/abs/1907.11692)), fine-tuned on a dataset of intent expressions available [here](https://research.ibm.com/haifa/dept/vst/debating_data.shtml) and also on 🤗 Transformer datasets hub [here](https://huggingface.co/datasets/ibm/vira-intents). The model is available on 🤗 Transformer models hub [here](https://huggingface.co/ibm/roberta-large-vira-intents). The model is downloaded automatically as part of the evaluation processes. 
 
-Users can experiment with alternative models by modifying the reference in the file `model.py` or by training in a different framework.  
+Users can experiment with alternative models by modifying the reference in the file `model.py` or by training in a different framework. The dataset of intent expressions can be downloaded manually from the links mentioned above or programmatically as is done in `trainer.py`.
 
 ## License
 
