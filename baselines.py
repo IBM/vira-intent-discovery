@@ -25,9 +25,9 @@ def generated_externally():
 
 # baselines = algorithms bar the oracle
 baselines = {
-    Algorithm.ORACLE_PREDICT:   (oracle_predict,                RunStatus.Run),
-    Algorithm.SIB:              (cluster_and_extract_intents,   RunStatus.Run),
-    Algorithm.KMEANS:           (cluster_and_extract_intents,   RunStatus.Run),
+    Algorithm.ORACLE_PREDICT:   (oracle_predict,                RunStatus.Skip),
+    Algorithm.SIB:              (cluster_and_extract_intents,   RunStatus.Skip),
+    Algorithm.KMEANS:           (cluster_and_extract_intents,   RunStatus.Skip),
     Algorithm.KPA:              (generated_externally,          RunStatus.Skip),
     Algorithm.RBC:              (generated_externally,          RunStatus.Skip),
 }
