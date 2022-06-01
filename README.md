@@ -11,8 +11,8 @@ Users are welcome to use the dataset and framework for evaluating new algorithms
 
 ## Usage
 
-To evaluate a new algorithm over `VIRADialogs` and compare it to the ones reported in the paper:
 
+### Prepare Environment and Data
 1. Clone this repository
 2. Download `VIRADialogs` from [Johns Hopkins Bloomberg School of Public Health](https://vaxchat.org/research). The dataset downloads as `vira_logs.zip`.
 3. Unpack the file in a temporal location and copy the file `vira_logs_<DATE>.csv` into `resources/snapshot`
@@ -25,22 +25,50 @@ pip install -r requirements.txt
 ```
 python prepare.py
 ```
-7. Edit the file ``algorithms.py``as follows:
-   * Add entry to the enum Algorithm
-   * Add the title of the new algorithm to the dictionary `titles`
-   * Add the path where predictions are stored to the dictionary `paths`
-8. Edit the file ``baselines.py`` as follows: 
-   * Add a new entry (tuple) to the dictionary `baselines` with 3 values as described below:
-      1.  The enum of the new algorithm
-      1.  A function for generating the algorithm result. The function should have the signature `(algorithm: Algorithm, df: pd.DataFrame, output_dir: str) -> None` (See `cluster_and_extract_intents` in `clustering.py` for example). Alternatively, you can put `generated_externally` if the generation is done by a separate - offline - proces.
-      1.  The value `Runstatus.Run` to include the algorithm in the next run of the evaluation.
-   * Whether a function was specified, or the genreation is done externally, the results should be stored in a file named `predictions.csv` under the output path given to the new algorithm. The CSV consists of 3 columns: `slot` , `intent` and `id`. These are the name of a slot, a predicted intent in that slot, and the id of the text associated to this intent in that slot. For example, see the file under `resources/predictions/kmeans`. 
 
-9. Run the baselines generation file
+### View the Paper Results
+This repository contains the results (predictions) of all systems mentioned in the paper. 
+
+To view the results, run the user interface and follow the instructions shown on screen:
+```
+streamlit run ui.py
+```
+
+
+### Reproduce the Paper Results
+It is possible to reproduce the results of the sIB and K-Means systems, but not of KPA and RBC systems which are closed-source.
+1. Open the file  ``baselines.py``, locate the enum ``baselines`` and set the value `Runstatus.Run` for sIB and K-Means.
+2. Run the baselines generation file
 ```
 python baselines.py
 ```
-10.  Run the user interface to check the results
+3.  Run the user interface to check the results
+```
+streamlit run ui.py
+```
+4. After inspecting the results, it is helpful to revert sIB and K-Means in the enum ``baselines`` to `Runstatus.Skip`, to avoid re-generating their results in subsequent runs.
+
+
+
+### Evaluating a New Algorithm
+Evaluating a new algorithm is fairly straightforward:
+
+1. Edit the file ``algorithms.py``as follows:
+   * Add entry to the enum Algorithm
+   * Add the title of the new algorithm to the dictionary `titles`
+   * Add the path where predictions are stored to the dictionary `paths`
+2. Edit the file ``baselines.py`` as follows: 
+   * Add a new entry (tuple) to the dictionary `baselines` with 3 values as described below:
+      1.  The enum of the new algorithm
+      1.  A function for generating the algorithm result. The function should have the signature `(algorithm: Algorithm, df: pd.DataFrame, output_dir: str) -> None` (See `cluster_and_extract_intents` in `clustering.py` for example). Alternatively, you can put `generated_externally` if the generation is done by a separate - offline - process.
+      1.  The value `Runstatus.Run` to include the algorithm in the next run of the evaluation.
+   * Whether a function was specified, or the generation is done externally, the results should be stored in a file named `predictions.csv` under the output path given to the new algorithm. The CSV consists of 3 columns: `slot` , `intent` and `id`. These are the name of a slot, a predicted intent in that slot, and the id of the text associated to this intent in that slot. For example, see the file under `resources/predictions/kmeans`. 
+
+3. Run the baselines generation file
+```
+python baselines.py
+```
+4.  Run the user interface to check the results
 ```
 streamlit run ui.py
 ```
