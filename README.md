@@ -108,7 +108,7 @@ If you have any questions or issues you can create a new [issue here][issues].
 
 
 ## Reference
-Benchmark Data and Evaluation Framework for Intent Discovery Around COVID-19 Vaccine Hesitancy. Shai Gretz, Assaf Toledo, Roni Friedman, Dan Lahav, Rose Weeks, Naor Bar-Zeev, João Sedoc, Pooja Sangha, Yoav Katz, Noam Slonim. arXiv, 2022
+[Benchmark Data and Evaluation Framework for Intent Discovery Around COVID-19 Vaccine Hesitancy](https://arxiv.org/abs/2205.11966). Shai Gretz, Assaf Toledo, Roni Friedman, Dan Lahav, Rose Weeks, Naor Bar-Zeev, João Sedoc, Pooja Sangha, Yoav Katz, Noam Slonim. arXiv, 2022
 
 [issues]: https://github.com/IBM/vira-intent-discovery/issues/new
 
