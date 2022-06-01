@@ -48,7 +48,7 @@ streamlit run ui.py
 ## Intent Matching
 The framework relies on a transformers-based classifier for classifying user utterances from the dataset to (at most) one COVID-19 vaccine intent, and for matching intents discovered by an algorithm to the target intents. 
 
-This model is based on RoBERTa large ([Liu, 2019](https://arxiv.org/abs/1907.11692)), fine-tuned on a dataset of intent expressions available [here](https://research.ibm.com/haifa/dept/vst/debating_data.shtml) and also on 🤗 Transformer datasets hub [here](https://huggingface.co/datasets/ibm/vira-intents). The model is available on 🤗 Transformer models hub [here](). The dataset and model are downloaded automatically as part of the training and evaluation processes. 
+This model is based on RoBERTa large ([Liu, 2019](https://arxiv.org/abs/1907.11692)), fine-tuned on a dataset of intent expressions available [here](https://research.ibm.com/haifa/dept/vst/debating_data.shtml) and also on 🤗 Transformer datasets hub [here](https://huggingface.co/datasets/ibm/vira-intents). The model is available on 🤗 Transformer models hub [here](https://huggingface.co/ibm/roberta-large-vira-intents). The dataset and model are downloaded automatically as part of the training and evaluation processes. 
 
 Users can experiment with alternative models by modifying the reference in the file `model.py` or by training in a different framework.  
 
