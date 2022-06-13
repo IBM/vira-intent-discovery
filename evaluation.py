@@ -15,7 +15,7 @@ from model import get_model_predictions
 
 
 intent_matching_model = 'oracle_supported_intents.csv'
-matching_threshold = 0.3
+matching_threshold = 0.296
 
 
 class MeasureType(Enum):

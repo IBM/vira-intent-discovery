@@ -19,7 +19,7 @@ class RunStatus(Enum):
     Skip = 1
 
 
-def generated_externally():
+def generated_externally(algorithm, df, output_dir):
     pass
 
 
