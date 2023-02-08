@@ -1,3 +1,6 @@
+# (c) Copyright IBM Corporation 2020-2022
+# SPDX-License-Identifier: Apache2.0
+
 import os
 
 
@@ -15,5 +18,6 @@ INTENT_MODEL_DIR = os.path.join('.', 'intent_model')
 
 SILVERDATA_DIR = os.path.join(RESOURCES_DIR, 'silverdata')
 PREDICTIONS_DIR = os.path.join(RESOURCES_DIR, 'predictions')
+PAPER_DIR = os.path.join(RESOURCES_DIR, 'paper')
 
 VECTORS_DIR = os.path.join(RESOURCES_DIR, 'vectors')
